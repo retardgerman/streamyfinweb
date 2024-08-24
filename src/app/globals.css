@@ -1,12 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
+@import url('/assets/fonts/SpaceMono-Regular.ttf');
 
 /* Custom Styles */
 html, body {
-  @apply bg-[#1e1a3f] text-white font-sans; /* Weißer Text, milchig-lila Hintergrund */
+  @apply bg-[#1e1a3f] text-white font-mono; /* Dunkler Hintergrund und weißer Text */
 }
 
 /* Header */
@@ -20,11 +20,11 @@ header h1 {
 
 /* Links und Navigation */
 nav a {
-  @apply mr-6 text-white;
+  @apply mr-6 text-white; /* Weißer Text für Links */
 }
 
 nav a:hover {
-  @apply text-[#d8b4fe];
+  @apply text-[#d8b4fe]; /* Lila Farbe beim Hover */
 }
 
 /* Abschnitt Styling */
@@ -36,12 +36,13 @@ section h2, section h3 {
   @apply text-white text-3xl font-bold; /* Weiße Überschriften */
 }
 
-.button, button {
-  @apply bg-[#4f6ed4cc] text-white py-3 px-6 rounded-lg cursor-pointer border-none; /* Semi-transparente Buttons */
+/* Buttons */
+button {
+  @apply bg-white border border-[#d8b4fe] text-[#2a2660cc] p-2 rounded-full flex items-center justify-center; /* Transparente Buttons mit lila Umrandung */
 }
 
-.button:hover, button:hover {
-  @apply bg-[#21c5e5cc];
+button:hover {
+  @apply bg-[#d8b4fe] text-white; /* Lila Hintergrund und weißer Text beim Hover */
 }
 
 /* Footer */
@@ -50,9 +51,9 @@ footer {
 }
 
 footer a {
-  @apply text-white;
+  @apply text-white; /* Weißer Text für Links im Footer */
 }
 
 footer a:hover {
-  @apply text-[#d8b4fe];
+  @apply text-[#d8b4fe]; /* Lila Farbe beim Hover */
 }
