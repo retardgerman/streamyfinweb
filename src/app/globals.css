@@ -4,41 +4,17 @@
 
 @import url('/assets/fonts/SpaceMono-Regular.ttf');
 
-/* Custom Styles */
 html, body {
-  @apply bg-[#1e1a3f] text-white font-mono; /* Dunkler Hintergrund und weißer Text */
-}
-
-/* Header */
-header {
-  @apply bg-gradient-to-b from-[#2a2660cc] to-transparent text-white py-4; /* Semi-transparenter Header */
+  @apply bg-[#1e1a3f] text-white font-sans;
 }
 
 header h1 {
-  @apply text-white text-2xl font-bold; /* Weißer Header-Text */
-}
-
-/* Links und Navigation */
-nav a {
-  @apply mr-6 text-white; /* Weißer Text für Links */
-}
-
-nav a:hover {
-  @apply text-[#d8b4fe]; /* Lila Farbe beim Hover */
-}
-
-/* Abschnitt Styling */
-section {
-  @apply py-12 px-6 bg-transparent; /* Transparente Boxen */
-}
-
-section h2, section h3 {
-  @apply text-white text-3xl font-bold; /* Weiße Überschriften */
+  @apply text-4xl font-bold text-center; /* Center and enlarge header text */
 }
 
 /* Buttons */
 button {
-  @apply bg-white border border-[#d8b4fe] text-[#2a2660cc] p-2 rounded-full flex items-center justify-center; /* Transparente Buttons mit lila Umrandung */
+  @apply bg-transparent border border-[#d8b4fe] text-[#d8b4fe] p-2 rounded-full flex items-center justify-center; /* Transparente Buttons mit lila Umrandung */
 }
 
 button:hover {
@@ -55,5 +31,5 @@ footer a {
 }
 
 footer a:hover {
-  @apply text-[#d8b4fe]; /* Lila Farbe beim Hover */
+  @apply text-white; /* Lila Farbe beim Hover */
 }
