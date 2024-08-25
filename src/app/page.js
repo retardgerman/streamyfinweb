@@ -1,36 +1,29 @@
+
+
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function Home() {
-  const features = [
-    {
-      title: 'Seamless Playback',
-      description: 'Enjoy smooth playback of all your media files, with support for various formats and codecs.',
-      image: '/assets/screenshots/screenshot1.png',
-    },
-    {
-      title: 'Offline Access',
-      description: 'Download media to your device and watch it offline, wherever you are.',
-      image: '/assets/screenshots/screenshot2.png',
-    },
-    {
-      title: 'Cross-Platform Sync',
-      description: 'Sync your viewing progress across all your devices effortlessly.',
-      image: '/assets/screenshots/screenshot3.png',
-    },
-  ];
-
-  const [currentFeatureIndex, setCurrentFeatureIndex] = useState(0);
+export default function HomePage() {
+  const [currentFeature, setCurrentFeature] = useState(features[0]);
 
   const handlePrevFeature = () => {
-    setCurrentFeatureIndex((prevIndex) => (prevIndex === 0 ? features.length - 1 : prevIndex - 1));
+    if (currentFeature) {
+      setCurrentFeature(
+        features[(features.indexOf(currentFeature) - 1 + features.length) % features.length]
+      );
+    }
   };
 
   const handleNextFeature = () => {
-    setCurrentFeatureIndex((prevIndex) => (prevIndex === features.length - 1 ? 0 : prevIndex + 1));
+    if (currentFeature) {
+      setCurrentFeature(
+        features[(features.indexOf(currentFeature) + 1) % features.length]
+      );
+    }
   };
 
   return (
@@ -48,17 +41,26 @@ export default function Home() {
       {/* Screenshot Carousel */}
       <section id="screenshots" className="bg-transparent pt-10 pb-4">
         <div className="container mx-auto flex items-center justify-center">
-          <Button onClick={handlePrevFeature} variant="ghost" size="icon">
+          <Button
+            onClick={handlePrevFeature}
+            variant="ghost"
+            size="icon"
+            className="rounded-full"
+          >
             <ChevronLeft className="h-6 w-6" />
           </Button>
           <div className="w-full max-w-md overflow-hidden relative">
-            <img
-              src={features[currentFeatureIndex].image}
-              alt={features[currentFeatureIndex].title}
-              className="shadow-lg rounded-lg object-cover w-full"
-            />
+            {currentFeature && (
+              <Image
+                src={currentFeature.image}
+                alt={currentFeature.title}
+                width={300}
+                height={300}
+                className="mx-auto"
+              />
+            )}
           </div>
-          <Button onClick={handleNextFeature} variant="ghost" size="icon">
+          <Button onClick={handleNextFeature} variant="ghost" size="icon" className="rounded-full">
             <ChevronRight className="h-6 w-6" />
           </Button>
         </div>
@@ -68,12 +70,14 @@ export default function Home() {
       <section id="features" className="container mx-auto py-6">
         <div className="flex items-center justify-center">
           <div className="w-full max-w-lg overflow-hidden relative text-center">
-            <div
-              className="p-6 shadow-lg rounded-lg bg-transparent"
-            >
-              <h4 className="text-2xl font-semibold mb-4">{features[currentFeatureIndex].title}</h4>
-              <p className="text-gray-300">{features[currentFeatureIndex].description}</p>
-            </div>
+            {currentFeature && (
+              <div
+                className="p-6 shadow-lg rounded-lg bg-transparent"
+              >
+                <h4 className="text-2xl font-semibold mb-4">{currentFeature.title}</h4>
+                <p className="text-gray-300">{currentFeature.description}</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -105,3 +109,21 @@ export default function Home() {
     </div>
   );
 }
+
+const features = [
+  {
+    title: 'Seamless Playback',
+    description: 'Enjoy smooth playback of all your media files, with support for various formats and codecs.',
+    image: '/assets/screenshots/screenshot1.png',
+  },
+  {
+    title: 'Offline Access',
+    description: 'Download media to your device and watch it offline, wherever you are.',
+    image: '/assets/screenshots/screenshot2.png',
+  },
+  {
+    title: 'Cross-Platform Sync',
+    description: 'Sync your viewing progress across all your devices effortlessly.',
+    image: '/assets/screenshots/screenshot3.png',
+  },
+];

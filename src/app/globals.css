@@ -18,7 +18,7 @@ button {
 }
 
 button:hover {
-  @apply bg-[#d8b4fe] text-white; /* Lila Hintergrund und weißer Text beim Hover */
+  @apply bg-white text-[#d10b4fe]; /* Weißer Hintergrund und lila Text beim Hover */
 }
 
 /* Footer */
