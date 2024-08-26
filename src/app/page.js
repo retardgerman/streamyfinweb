@@ -1,4 +1,4 @@
-
+// src/app/page.js
 
 'use client';
 
@@ -8,23 +8,17 @@ import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function HomePage() {
-  const [currentFeature, setCurrentFeature] = useState(features[0]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrevFeature = () => {
-    if (currentFeature) {
-      setCurrentFeature(
-        features[(features.indexOf(currentFeature) - 1 + features.length) % features.length]
-      );
-    }
+    setCurrentIndex((currentIndex - 1 + features.length) % features.length);
   };
 
   const handleNextFeature = () => {
-    if (currentFeature) {
-      setCurrentFeature(
-        features[(features.indexOf(currentFeature) + 1) % features.length]
-      );
-    }
+    setCurrentIndex((currentIndex + 1) % features.length);
   };
+
+  const currentFeature = features[currentIndex];
 
   return (
     <div className="bg-[#1e1a3f] text-white">
@@ -84,7 +78,7 @@ export default function HomePage() {
 
        {/* Hero Section */}
        <section id="download" className="bg-transparent text-center py-20">
-        <h2 className="text-4xl font-bold text-white mb-6">Stream your media anywhere with Streamyfin</h2>
+        <h2 className="text-4xl font-bold text-white mb-6">Stream your media anywhere with Streamyfin.</h2>
         <p className="text-lg text-white mb-8">The best Jellyfin client for iOS and Android. Access your media library seamlessly on your devices.</p>
         <div className="flex justify-center space-x-4">
           <a href="https://apps.apple.com/de/app/streamyfin/id6593660679" target="_blank" rel="noopener noreferrer">
@@ -121,9 +115,5 @@ const features = [
     description: 'Download media to your device and watch it offline, wherever you are.',
     image: '/assets/screenshots/screenshot2.png',
   },
-  {
-    title: 'Cross-Platform Sync',
-    description: 'Sync your viewing progress across all your devices effortlessly.',
-    image: '/assets/screenshots/screenshot3.png',
-  },
+  
 ];
