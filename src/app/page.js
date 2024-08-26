@@ -11,14 +11,18 @@ export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrevFeature = () => {
-    setCurrentIndex((currentIndex - 1 + features.length) % features.length);
+    if (features.length > 0) {
+      setCurrentIndex((currentIndex - 1 + features.length) % features.length);
+    }
   };
 
   const handleNextFeature = () => {
-    setCurrentIndex((currentIndex + 1) % features.length);
+    if (features.length > 0) {
+      setCurrentIndex((currentIndex + 1) % features.length);
+    }
   };
 
-  const currentFeature = features[currentIndex];
+  const currentFeature = features[currentIndex] ?? null;
 
   return (
 
@@ -50,8 +54,8 @@ export default function HomePage() {
           <div className="w-full max-w-md overflow-hidden relative">
             {currentFeature && (
               <Image
-                src={currentFeature.image}
-                alt={currentFeature.title}
+                src={currentFeature?.image}
+                alt={currentFeature?.title}
                 width={300}
                 height={300}
                 className="mx-auto"
@@ -72,8 +76,8 @@ export default function HomePage() {
               <div
                 className="p-6 shadow-lg rounded-lg bg-transparent"
               >
-                <h4 className="text-2xl font-semibold mb-4">{currentFeature.title}</h4>
-                <p className="text-gray-300">{currentFeature.description}</p>
+                <h4 className="text-2xl font-semibold mb-4">{currentFeature?.title}</h4>
+                <p className="text-gray-300">{currentFeature?.description}</p>
               </div>
             )}
           </div>
