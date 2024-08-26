@@ -92,7 +92,7 @@ export default function HomePage() {
           <a href="https://apps.apple.com/de/app/streamyfin/id6593660679" target="_blank" rel="noopener noreferrer">
             <img src="/badges/app-store-badge.png" alt="Download on the App Store" className="h-12"/>
           </a>
-          <a href="https://play.google.com/store/apps/details" target="_blank" rel="noopener noreferrer">
+          <a href="https://play.google.com/store/apps/details?id=com.fredrikburmester.streamyfin" target="_blank" rel="noopener noreferrer">
             <img src="/badges/google-play-badge.png" alt="Get it on Google Play" className="h-12"/>
           </a>
         </div>
