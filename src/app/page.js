@@ -21,8 +21,12 @@ export default function HomePage() {
   const currentFeature = features[currentIndex];
 
   return (
+
     <div className="bg-[#1e1a3f] text-white">
       {/* Header */}
+      <a href="https://github.com/fredrikburmester/streamyfin" target="_blank" rel="noopener noreferrer">
+        <img src="./assets/images/github.png" alt="Github logo" className="absolute right-4 top-6 h-8 w-8" />
+      </a>
       <header className="bg-gradient-to-b from-[#2a2660cc] to-transparent text-white py-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
@@ -77,7 +81,7 @@ export default function HomePage() {
       </section>
 
        {/* Hero Section */}
-       <section id="download" className="bg-transparent text-center py-20">
+       <section id="download" className="bg-transparent text-center py-20 px-4 sm:px-0">
         <h2 className="text-4xl font-bold text-white mb-6">Stream your media anywhere with Streamyfin.</h2>
         <p className="text-lg text-white mb-8">The best Jellyfin client for iOS and Android. Access your media library seamlessly on your devices.</p>
         <div className="flex justify-center space-x-4">
@@ -96,6 +100,7 @@ export default function HomePage() {
           <p>&copy; 2024 Streamyfin. All rights reserved.</p>
           <div className="flex justify-center space-x-4 mt-4">
             <a href="https://github.com/fredrikburmester/streamyfin" className="hover:underline">GitHub</a>
+            <a href='https://discord.gg/aJvAYeycyY' className='hover:underline'>Discord</a>
             <a href="mailto:fredrik.burmester@gmail.com?subject=Streamyfin" className="hover:underline">Contact Us</a>
           </div>
         </div>
@@ -105,15 +110,24 @@ export default function HomePage() {
 }
 
 const features = [
+
+  {
+    title: 'Browse Your Media Library',
+    description: 'Access your media library of your Jellyfin server, including movies, TV shows, and music.',
+    image: '/assets/screenshots/screenshot4.png',
+
+
+  },
   {
     title: 'Seamless Playback',
     description: 'Enjoy smooth playback of all your media files, with support for various formats and codecs.',
-    image: '/assets/screenshots/screenshot1.png',
+    image: '/assets/screenshots/screenshot3.png',
   },
   {
     title: 'Offline Access',
     description: 'Download media to your device and watch it offline, wherever you are.',
     image: '/assets/screenshots/screenshot2.png',
   },
+
   
 ];

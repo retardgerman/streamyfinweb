@@ -1,9 +1,9 @@
 /// src/app/layout.js
 
-import { Space_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 
-const spacemono = Space_Mono({
+const roboto = Roboto({
   weight: ["400"],
   style: ["normal",],
   subsets: ["latin"] });
@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children: page }) {
   return (
     <html lang="en">
-      <body className={spacemono.className}>{page}</body>
+      <body className={roboto.className}>{page}</body>
     </html>
   );
 }
