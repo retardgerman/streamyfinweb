@@ -1,36 +1,11 @@
-// src/app/page.js
+// The main page of the Streamyfin website.
 
-'use client';
-
-import { useState } from 'react';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function HomePage() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handlePrevFeature = () => {
-    if (features.length > 0) {
-      setCurrentIndex((currentIndex - 1 + features.length) % features.length);
-    }
-  };
-
-  const handleNextFeature = () => {
-    if (features.length > 0) {
-      setCurrentIndex((currentIndex + 1) % features.length);
-    }
-  };
-
-  const currentFeature = features[currentIndex] ?? null;
-
   return (
-
     <div className="bg-[#1e1a3f] text-white">
-      {/* Header */}
-      <a href="https://github.com/fredrikburmester/streamyfin" target="_blank" rel="noopener noreferrer">
-        <img src="./assets/images/github.png" alt="Github logo" className="absolute right-4 top-6 h-8 w-8" />
-      </a>
       <header className="bg-gradient-to-b from-[#2a2660cc] to-transparent text-white py-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
@@ -40,65 +15,52 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Screenshot Carousel */}
-      <section id="screenshots" className="bg-transparent pt-10 pb-4">
-        <div className="container mx-auto flex items-center justify-center">
-          <Button
-            onClick={handlePrevFeature}
-            variant="ghost"
-            size="icon"
-            className="rounded-full"
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
-          <div className="w-full max-w-md overflow-hidden relative">
-            {currentFeature && (
-              <Image
-                src={currentFeature?.image}
-                alt={currentFeature?.title}
-                width={300}
-                height={300}
-                className="mx-auto"
-              />
-            )}
-          </div>
-          <Button onClick={handleNextFeature} variant="ghost" size="icon" className="rounded-full">
-            <ChevronRight className="h-6 w-6" />
-          </Button>
-        </div>
-      </section>
+      <section id="screenshots-features" className="bg-transparent pt-10 pb-4 relative">
+        <div className="container mx-auto flex items-center justify-center relative">
+          <div className="relative w-full max-w-lg">
+            <Carousel opts={{ loop: true }} className="relative w-full">
+              <CarouselContent>
+                {features.map((feature, index) => (
+                  <CarouselItem key={index} className="flex flex-col items-center text-center">
+                    <Image
+                      src={feature.image}
+                      alt={feature.title}
+                      width={300}
+                      height={300}
+                      className="mx-auto"
+                    />
+                    <div className="mt-4">
+                      <h4 className="text-2xl font-semibold mb-2">{feature.title}</h4>
+                      <p className="text-gray-300">{feature.description}</p>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
 
-      {/* Features Carousel */}
-      <section id="features" className="container mx-auto py-6">
-        <div className="flex items-center justify-center">
-          <div className="w-full max-w-lg overflow-hidden relative text-center">
-            {currentFeature && (
-              <div
-                className="p-6 shadow-lg rounded-lg bg-transparent"
-              >
-                <h4 className="text-2xl font-semibold mb-4">{currentFeature?.title}</h4>
-                <p className="text-gray-300">{currentFeature?.description}</p>
-              </div>
-            )}
+              <CarouselPrevious className="absolute left-3 top-1/2 transform -translate-y-1/2 -translate-x-full bg-white text-[#1e1a3f] text-4xl p-2 rounded-full">
+                ◀
+              </CarouselPrevious>
+              <CarouselNext className="absolute right-3 top-1/2 transform -translate-y-1/2 translate-x-full bg-white text-[#1e1a3f] text-4xl p-2 rounded-full">
+                ▶
+              </CarouselNext>
+            </Carousel>
           </div>
         </div>
       </section>
 
-       {/* Hero Section */}
-       <section id="download" className="bg-transparent text-center py-20 px-4 sm:px-0">
+      <section id="download" className="bg-transparent text-center py-20 px-4 sm:px-0">
         <h2 className="text-4xl font-bold text-white mb-6">Stream your media anywhere with Streamyfin.</h2>
         <p className="text-lg text-white mb-8">The best Jellyfin client for iOS and Android. Access your media library seamlessly on your devices.</p>
         <div className="flex justify-center space-x-4">
           <a href="https://apps.apple.com/de/app/streamyfin/id6593660679" target="_blank" rel="noopener noreferrer">
-            <img src="/badges/app-store-badge.png" alt="Download on the App Store" className="h-12"/>
+            <img src="/badges/app-store-badge.png" alt="Download on the App Store" className="h-12" />
           </a>
           <a href="https://play.google.com/store/apps/details?id=com.fredrikburmester.streamyfin" target="_blank" rel="noopener noreferrer">
-            <img src="/badges/google-play-badge.png" alt="Get it on Google Play" className="h-12"/>
+            <img src="/badges/google-play-badge.png" alt="Get it on Google Play" className="h-12" />
           </a>
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-transparent text-white py-6">
         <div className="container mx-auto text-center">
           <p>&copy; 2024 Streamyfin. All rights reserved.</p>
@@ -114,13 +76,10 @@ export default function HomePage() {
 }
 
 const features = [
-
   {
     title: 'Browse Your Media Library',
     description: 'Access your media library of your Jellyfin server, including movies, TV shows, and music.',
     image: '/assets/screenshots/screenshot4.png',
-
-
   },
   {
     title: 'Seamless Playback',
@@ -132,6 +91,5 @@ const features = [
     description: 'Download media to your device and watch it offline, wherever you are.',
     image: '/assets/screenshots/screenshot2.png',
   },
-
-  
 ];
+

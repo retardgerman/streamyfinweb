@@ -11,14 +11,6 @@ header h1 {
   @apply text-4xl font-bold text-center; /* Center and enlarge header text */
 }
 
-/* Buttons */
-button {
-  @apply bg-transparent border border-[#d8b4fe] text-[#d8b4fe] p-2 rounded-full flex items-center justify-center; /* Transparente Buttons mit lila Umrandung */
-}
-
-button:hover {
-  @apply bg-white text-[#d10b4fe]; /* Weißer Hintergrund und lila Text beim Hover */
-}
 
 /* Footer */
 footer {
