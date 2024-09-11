@@ -2,6 +2,7 @@
 
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto({
   weight: ["400"],
@@ -16,7 +17,10 @@ export const metadata = {
 export default function RootLayout({ children: page }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{page}</body>
+      <body className={roboto.className}>
+      {page}
+      <Analytics />
+      </body>
     </html>
   );
 }
