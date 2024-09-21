@@ -9,13 +9,18 @@ export default function HomePage() {
       <header className="bg-gradient-to-b from-[#2a2660cc] to-transparent text-white py-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
-            <img src="/icon_512x512.png" alt="Streamyfin Logo" className="h-12 mr-4" />
+            <img src="/assets/images/icon_512x512.png" alt="Streamyfin Logo" className="h-12 mr-4" />
 
             <h1 className="text-4xl font-bold text-center">Streamyfin</h1>
           </div>
-          <a href="https://github.com/fredrikburmester/streamyfin" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/images/github.png" alt="GitHub" className="h-9" />
-          </a>
+          <div className="flex items-center">
+            <a href="https://github.com/fredrikburmester/streamyfin" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/images/github.png" alt="GitHub" className="h-9 mr-4" />
+            </a>
+            <a href="https://discord.gg/aJvAYeycyY" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/images/discord.png" alt="Discord" className="h-9" />
+            </a>
+          </div>
         </div>
       </header>
 

@@ -11,7 +11,7 @@ const roboto = Roboto({
 
 export const metadata = {
   title: "Streamyfin",
-  description: "Stream your media anywhere with Streamyfin",
+  description: "A Jellyfin client for iOS and Android designed to elevate your media library, featuring parts refreshed interface, offline access, trickplay, PiP, plugins and more!",
 };
 
 export default function RootLayout({ children: page }) {
