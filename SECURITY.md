@@ -1,9 +1,3 @@
-  ___ _                           __ _      
- / __| |_ _ _ ___ __ _ _ __ _  _ / _(_)_ _  
- \__ \  _| '_/ -_) _` | '  \ || |  _| | ' \ 
- |___/\__|_| \___\__,_|_|_|_\_, |_| |_|_||_|
-                            |__/            
-
 # Security Policy
 We take security seriously and encourage our users and security researchers to help us improve our security. If you discover a vulnerability, please follow these steps:
 
