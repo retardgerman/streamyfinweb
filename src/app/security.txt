@@ -1,0 +1,18 @@
+  ___ _                           __ _      
+ / __| |_ _ _ ___ __ _ _ __ _  _ / _(_)_ _  
+ \__ \  _| '_/ -_) _` | '  \ || |  _| | ' \ 
+ |___/\__|_| \___\__,_|_|_|_\_, |_| |_|_||_|
+                            |__/            
+
+# Security Policy
+We take security seriously and encourage our users and security researchers to help us improve our security. If you discover a vulnerability, please follow these steps:
+
+1. Please do not disclose the vulnerability publicly until it has been addressed.
+2. Provide us with detailed information about the vulnerability, including steps to reproduce.
+3. Allow us a reasonable amount of time to respond and address the issue before making any public disclosures.
+
+# Contact
+E-mail: fredrik.burmester@gmail.com
+Discord: https://discord.gg/aJvAYeycyY
+GitHub: https://github.com/fredrikburmester/streamyfin
+

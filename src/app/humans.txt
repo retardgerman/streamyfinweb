@@ -1,0 +1,18 @@
+  ___ _                           __ _      
+ / __| |_ _ _ ___ __ _ _ __ _  _ / _(_)_ _  
+ \__ \  _| '_/ -_) _` | '  \ || |  _| | ' \ 
+ |___/\__|_| \___\__,_|_|_|_\_, |_| |_|_||_|
+                            |__/            
+ 
+/* CONTACT */
+Website: https://www.streamyfin.app/
+GitHub: https://github.com/fredrikburmester/streamyfin
+Discord: https://discord.gg/CQqGrN4j
+
+/* ABOUT */
+Streamyfin is a mobile Jellyfin client available for Android and iOS, designed to enhance your media streaming experience. Built with user-friendly principles, it offers offline access, a customizable interface, and much more.
+
+We believe in open-source values and community engagement, welcoming feedback and contributions from users to continually improve the app.
+
+/* THANKS */
+Special thanks to the Jellyfin community and open-source contributors who inspire and support our journey!
