@@ -58,7 +58,7 @@ export default function HomePage() {
           <h2 className="text-4xl font-bold text-white mb-6">Stream your media anywhere with Streamyfin.</h2>
           <p className="text-xl text-white mb-8">The best Jellyfin client for iOS and Android. Access your media library seamlessly on your devices.</p>
           <div className="flex justify-center space-x-4">
-            <a href="https://apps.apple.com/de/app/streamyfin/id6593660679" target="_blank" rel="noopener noreferrer">
+            <a href="https://apps.apple.com/app/streamyfin/id6593660679" target="_blank" rel="noopener noreferrer">
               <img src="/badges/app-store-badge.png" alt="Download on the App Store" className="h-10" />
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.fredrikburmester.streamyfin" target="_blank" rel="noopener noreferrer">
