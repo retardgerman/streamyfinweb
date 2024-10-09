@@ -58,7 +58,7 @@ export function ScreenshotCarousel() {
   ];
   return (
     <div className="w-[70vw] 2xl:w-[50vw]">
-      <Carousel className="">
+      <Carousel className="" opts={{loop: true}}>
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
