@@ -73,7 +73,7 @@ export function ScreenshotCarousel() {
                   />
                 </div>
                 <h3 className={`mt-2 text-lg font-semibold`}>{image.title}</h3>
-                <p className={`text-sm text-gray-600`}>{image.subtitle}</p>
+                <p className={`text-sm text-gray-400`}>{image.subtitle}</p>
               </div>
             </CarouselItem>
           ))}
