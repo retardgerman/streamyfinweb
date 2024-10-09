@@ -11,43 +11,48 @@ import {
 export function ScreenshotCarousel() {
   const images = [
     {
-      title: "Home Screen",
-      subtitle: "See your up-next, continue watching and recently added. With support for collections import plugin.",
+      title: "Overview",
+      // Link the "Collection import plugin" to "https://github.com/lostb1t/jellyfin-plugin-collection-import"
+      subtitle: "See your up-next, continue watching and recently added. With support for collections import plugin for easy importing of external collections",
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (5).png",
     },
     {
       title: "Search",
-      subtitle: "Search for anything - with support for JellySearch and MarlinSearch",
+      // Link the JellySearch/MarlinSearch project's to "https://gitlab.com/DomiStyle/jellysearch" and "https://github.com/fredrikburmester/marlin-search" 
+      subtitle: "Search for anything - with support for JellySearch and MarlinSearch for an effortless searching experience, no matter how bad you're spelling",
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (1).png",
     },
     {
       title: "Libraries",
-      subtitle: "View all your libraries with sort and filter just like you're used to.",
+      subtitle: "View all your libraries with every type of filter you could wish for to find the exact type of movie you want at that moment",
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (2).png",
     },
     {
-      title: "",
-      subtitle: "",
+      title: "Media",
+      subtitle: "Watch or listen to any type of media you could want to, watch a movie, listen to music, or tune-in on Live-TV, all from your server in 1 app",
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (6).png",
     },
     {
-      title: "Download movies and episodes with a click.",
-      subtitle: "Downloads the HLS stream directly from Jellyfin, combining it into a single file with ffmpeg. With support for the optimized server.",
+      title: "Download",
+      // Link the Optimized Server to "https://github.com/fredrikburmester/streamyfin-optimized-versions-server"
+      subtitle: "Download support inside of the app including transcoded download, with support for background downloads feature using the optimizing server container!",
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (8).png",
     },
     {
       title: "Streaming Options",
-      subtitle: "Select version, streaming quality, audio and subtitle tracks.",
+      subtitle: "Customize the stream with how you wish to watch your content, change stream quality, audio, subtitle's, do you want 100Mbps or 100Kbps ",
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (9).png",
     },
     {
       title: "Chromecast",
-      subtitle: "Support for Chromecast for both Android and iOS.",
+      subtitle: "Full Support for Chromecast streaming on both Android and iOS, for when the mobile screen isn't good enough.",
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (10).png",
     },
     {
-      title: "With support for extended controls",
-      subtitle: "",
+      title: "Extended controls",
+      // Add a screenshot for the Intro Skipper as it's a major feature so deserves it's own screenshot and section, then make this section more about the extended controls.
+      // Link the into-skipper to "https://github.com/intro-skipper/intro-skipper"
+      subtitle: "Extended video controls inside of the video player, including intergrated intro-skipper support so you can skip those intros/credits in your most recent show binge.",
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (11).png",
     },
   ];
