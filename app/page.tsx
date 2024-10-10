@@ -1,5 +1,6 @@
 import { ScreenshotCarousel } from "@/components/ScreenshotCarousel";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         </div>
         <div className="flex flex-row gap-4 lg:gap-8 items-center">
           <div className="h-6 lg:h-8 aspect-square flex items-center justify-center">
+            <Link href="https://discord.gg/6sGx9J9">
             <Image
               src={"/assets/images/discord.png"}
               width={100}
@@ -23,14 +25,17 @@ export default function Home() {
               alt=""
               className="object-contain"
             />
+            </Link>
           </div>
           <div className="h-6 lg:h-8 aspect-square flex items-center justify-center">
+            <Link href="https://github.com/fredrikburmester/streamyfin">
             <Image
               src={"/assets/images/github.png"}
               width={100}
               height={100}
               alt=""
             />
+            </Link> 
           </div>
         </div>
       </header>
