@@ -1,5 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
+import Link from "next/link"; // Import Link from Next.js
 import {
   Carousel,
   CarouselContent,
@@ -9,56 +10,137 @@ import {
 } from "@/components/ui/carousel";
 
 export function ScreenshotCarousel() {
-  const images = [
+  const images: { title: string; subtitle: React.ReactNode; link: string }[] = [
     {
       title: "Overview",
-      // Link the "Collection import plugin" to "https://github.com/lostb1t/jellyfin-plugin-collection-import"
-      subtitle: "See your up-next, continue watching and recently added. With support for collections import plugin for easy importing of external collections",
+      subtitle: (
+        <div>
+          See your up-next, continue watching, and recently added. With support
+          for  
+          {" "}
+
+          <Link
+            href="https://github.com/lostb1t/jellyfin-plugin-collection-import"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 underline"
+          >
+            collections import plugin 
+          </Link>{" "}
+          for easy importing of external collections.  
+        </div>
+      ),
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (5).png",
     },
     {
       title: "Search",
-      // Link the JellySearch/MarlinSearch project's to "https://gitlab.com/DomiStyle/jellysearch" and "https://github.com/fredrikburmester/marlin-search" 
-      subtitle: "Search for anything - with support for JellySearch and MarlinSearch for an effortless searching experience, no matter how bad you're spelling",
+      subtitle: (
+        <div>
+          Search for anything - with support for{" "}
+          <Link
+            href="https://gitlab.com/DomiStyle/jellysearch"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 underline"
+          >
+            JellySearch
+          </Link>{" "}
+          and{" "}
+          <Link
+            href="https://github.com/fredrikburmester/marlin-search"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 underline"
+          >
+            MarlinSearch
+          </Link>{" "}
+          for an effortless searching experience.
+        </div>
+      ),
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (1).png",
     },
     {
       title: "Libraries",
-      subtitle: "View all your libraries with every type of filter you could wish for to find the exact type of movie you want at that moment",
+      subtitle: (
+        <div>
+          View all your libraries with every type of filter you could wish for
+          to find the exact type of movie you want at that moment.
+        </div>
+      ),
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (2).png",
     },
     {
       title: "Media",
-      subtitle: "Watch or listen to any type of media you could want to, watch a movie, listen to music, or tune-in on Live-TV, all from your server in 1 app",
+      subtitle: (
+        <div>
+          Watch or listen to any type of media you want, whether it's movies,
+          music, or Live-TV, all from your server in one app.
+        </div>
+      ),
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (6).png",
     },
     {
       title: "Download",
-      // Link the Optimized Server to "https://github.com/fredrikburmester/streamyfin-optimized-versions-server"
-      subtitle: "Download support inside of the app including transcoded download, with support for background downloads feature using the optimizing server container!",
+      subtitle: (
+        <div>
+          Download support inside the app with transcoded downloads and
+          background downloads, using the{" "}
+          <Link
+            href="https://github.com/fredrikburmester/streamyfin-optimized-versions-server"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 underline"
+          >
+            optimized server
+          </Link>
+          .
+        </div>
+      ),
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (8).png",
     },
     {
       title: "Streaming Options",
-      subtitle: "Customize the stream with how you wish to watch your content, change stream quality, audio, subtitle's, do you want 100Mbps or 100Kbps ",
+      subtitle: (
+        <div>
+          Customize how you watch your content—change stream quality, audio, and
+          subtitles, whether it's 100Mbps or 100Kbps.
+        </div>
+      ),
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (9).png",
     },
     {
       title: "Chromecast",
-      subtitle: "Full Support for Chromecast streaming on both Android and iOS, for when the mobile screen isn't good enough.",
+      subtitle: (
+        <div>
+          Full support for Chromecast streaming on both Android and iOS, for
+          when the mobile screen isn't enough.
+        </div>
+      ),
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (10).png",
     },
     {
       title: "Extended controls",
-      // Add a screenshot for the Intro Skipper as it's a major feature so deserves it's own screenshot and section, then make this section more about the extended controls.
-      // Link the into-skipper to "https://github.com/intro-skipper/intro-skipper"
-      subtitle: "Extended video controls inside of the video player, including intergrated intro-skipper support so you can skip those intros/credits in your most recent show binge.",
+      subtitle: (
+        <div>
+          Extended video controls inside the video player, including integrated{" "}
+          <Link
+            href="https://github.com/intro-skipper/intro-skipper"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 underline"
+          >
+            intro-skipper
+          </Link>{" "}
+          support so you can skip intros/credits during your latest binge.
+        </div>
+      ),
       link: "/assets/screenshots/Screenshots_new/Iphone/Black/streamyfin_black (11).png",
     },
   ];
+
   return (
     <div className="w-[70vw] 2xl:w-[50vw]">
-      <Carousel className="" opts={{loop: true}}>
+      <Carousel className="" opts={{ loop: true }}>
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
@@ -73,7 +155,7 @@ export function ScreenshotCarousel() {
                   />
                 </div>
                 <h3 className={`mt-2 text-lg font-semibold`}>{image.title}</h3>
-                <p className={`text-sm text-gray-400`}>{image.subtitle}</p>
+                <div className={`text-sm text-gray-400`}>{image.subtitle}</div>
               </div>
             </CarouselItem>
           ))}
