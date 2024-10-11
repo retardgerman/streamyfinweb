@@ -15,7 +15,7 @@ export function ScreenshotCarousel() {
       title: "Overview",
       subtitle: (
         <div>
-          See your next-up, continue watching, and recently added. With support
+          See your next-up Episodes, continue watching, and recently added items. With support
           for  
           {" "}
 
